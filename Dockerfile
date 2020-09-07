@@ -9,7 +9,7 @@ RUN apk update \
 	&& apk add --no-cache --virtual .build-deps curl \
 	&& curl -sL $WEBPROC_URL | gzip -d - > /usr/local/bin/webproc \
 	&& chmod +x /usr/local/bin/webproc \
-	&& apk upgrade
+	&& apk upgrade \
 	&& apk del .build-deps
 #configure dnsmasq
 RUN mkdir -p /etc/default/
